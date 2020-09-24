@@ -19,14 +19,19 @@ public class CustomerController {
         return customers.size();
     }
 
-    @GetMapping("/findAll")
+    @GetMapping("/getAll")
     public Iterable<Customer> findAllCustomers() {
         return customerService.findAllCustomers();
     }
 
-    @GetMapping("/findByFName/{firstName}/{age}")
+    @GetMapping("/getByFNameAndAge/{firstName}/{age}")
     public List<Customer> findByFirstName(@PathVariable String firstName,@PathVariable int age) {
         return customerService.findByFirstname(firstName,age);
+    }
+
+    @GetMapping("/getCountByAge/{age}")
+    public Long getCustomerCountByAge(@PathVariable int age) {
+        return customerService.getCustomerByAge(age);
     }
 
 }

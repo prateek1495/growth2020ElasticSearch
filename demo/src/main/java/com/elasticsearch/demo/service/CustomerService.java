@@ -11,4 +11,6 @@ public interface CustomerService {
     Iterable<Customer> findAllCustomers();
 
     List<Customer> findByFirstname(String firstName,int age);
+
+    Long getCustomerByAge(Integer age);
 }
